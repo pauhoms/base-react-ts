@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack serve --port 3000",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "tslint": "tslint './src/**/*.{ts,tsx}'",
     "tslint:fix": "npm run tslint -- --fix",
-    "build": "webpack --config webpack.config.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --config webpack.config.prod.js"
   },
   "author": "pauhomsjimenez1@gmail.com",
   "license": "MIT",
@@ -23,6 +24,7 @@
     "@types/jest": "^27.0.3",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.4.3",
+    "jest-dom": "^4.0.0",
     "mini-css-extract-plugin": "^2.4.5",
     "prettier": "^2.5.0",
     "terser-webpack-plugin": "^5.2.5",
