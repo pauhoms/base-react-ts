@@ -12,7 +12,7 @@ deploy:
 	@printf "\n\nProject is running at http://localhost:4000/ \n"
 
 test:
-	docker exec -i app sh -c 'npm run test'
+	docker exec -i app sh -c 'npm run test --silent'
 
 stop:
 	docker-compose -f etc/docker-compose.yml down

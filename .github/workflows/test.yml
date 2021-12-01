@@ -13,4 +13,4 @@ jobs:
         make run
 
     - name: Run tests
-      run: make test
+      run: docker exec -i app sh -c 'npm run test --silent'
