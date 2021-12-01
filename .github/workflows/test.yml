@@ -1,22 +1,13 @@
-
 name: test
 on: push
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.4.0
-        with:
-          repository: ${{ github.repository }}
+    - uses: actions/checkout@v2
 
-      - name: Cache node modules
-        uses: actions/cache@v2
-
-      - name: Docker containers
-        run: |
-          make build
-          make run
-
-
-  
+    - name: Docker containers
+      run: |
+        make build
+        make run
