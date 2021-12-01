@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  app:
+    build:
+      dockerfile: ./etc/docker/app/Dockerfile
+      context: ./../
+    container_name: app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../:/app
+  
+  nginx:
+    build:
+      context: ./../
+      dockerfile: ./etc/docker/nginx/Dockerfile
+    container_name: producction-server
+    ports:
+      - "4000:80"
+    volumes:
+      - ../dist/:/var/www/html/public
+
